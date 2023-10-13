@@ -1,0 +1,28 @@
+The procedure is as follows to tar a file in Linux:
+
+1. Compress an entire directory by running
+ tar -zcvf file.tar.gz /path/to/dir/ 
+2. To compress a single file by running 
+ tar -zcvf file.tar.gz /path/to/filename 
+3. Tar and compress multiple directories file by running
+ tar -zcvf file.tar.gz dir1 dir2 dir3
+
+c - compress and entire directory
+v - verbose
+z - filter the archive through gzip
+f - use archive file <file.tar.gz>
+
+1. Extract an archive by running
+ tar -xzvf file.tar.gz
+2. Extract an archive in a specific directory by running
+ tar -xzvf file.tar.gz -C /directory
+
+x - extract and archive
+
+1. View files stored in an archive
+ tar -ztvf file.tar.gz
+
+t - view/list an archive
+
+
+
