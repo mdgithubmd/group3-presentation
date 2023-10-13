@@ -1,0 +1,5 @@
+There are a few command options available on linux to check the ping connection between two nodes.
+ping <destination_ip_or_hostname>
+eg: ping google.com
+To check the ping a specific number of times you can use the "-c" option:
+eg: ping -c 4 google.com
