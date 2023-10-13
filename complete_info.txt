@@ -1,0 +1,100 @@
+------------------COMPRESS/DECOMPRESS------------------
+The command used in compressing/decompressing files/directories in Linux is:
+tar
+
+The procedure to tar a file in Linux is as follow:
+
+1. Compress an entire directory by running
+ tar -zcvf file.tar.gz /path/to/dir/ 
+2. To compress a single file by running 
+ tar -zcvf file.tar.gz /path/to/filename 
+3. Tar and compress multiple directories file by running
+ tar -zcvf file.tar.gz dir1 dir2 dir3
+
+c - compress and entire directory
+v - verbose
+z - filter the archive through gzip
+f - use archive file <file.tar.gz>
+
+1. Extract an archive by running
+ tar -xzvf file.tar.gz
+2. Extract an archive in a specific directory by running
+ tar -xzvf file.tar.gz -C /directory
+
+x - extract and archive
+
+1. View files stored in an archive
+ tar -ztvf file.tar.gz
+
+t - view/list an archive
+
+------------------NODE CONNECTIVITY (PING)------------------
+There are a few command options available on linux to check the ping connection between two nodes.
+ping <destination_ip_or_hostname>
+eg: ping google.com
+To check the ping a specific number of times you can use the "-c" option:
+eg: ping -c 4 google.com
+
+
+------------------tcpdump------------------
+
+Linux command tcpdump:
+
+tcpdump is a powerful command-line packet analyzer tool for monitoring network traffic in a Unix or Unix-like operating system, such as Linux. It allows you to capture and display network packets on a network interface, making it a valuable tool for network troubleshooting and analysis.
+
+Here's a basic explanation of the tcpdump command and its commonly used options:
+
+Syntax:
+
+tcpdump [options] [expression]
+
+
+Options:
+
+-i: Specifies the network interface to capture packets from.
+-n: Displays numerical addresses instead of resolving hostnames.
+-c: Limits the number of packets to capture before exiting.
+-s: Sets the snapshot length, limiting the amount of data captured for each packet.
+-w: Writes captured packets to a file for later analysis.
+-r: Reads packets from a capture file (previously created with -w).
+-A: Displays packet data as ASCII (useful for capturing HTTP traffic).
+-q: Quiet mode (less verbose output).
+-e: Displays link-layer information (Ethernet frame headers).
+-X: Displays packet data in both hex and ASCII format.
+not port: Excludes packets with a specific port number.
+host: Captures packets to or from a specific IP address.
+net: Captures packets on a specific network or subnet.
+Expression:
+You can use various expressions to filter and capture specific packets. For example:
+
+host 192.168.1.1: Captures packets involving the host with IP address 192.168.1.1.
+port 80: Captures packets using port 80 (HTTP).
+tcp and port 22: Captures TCP packets on port 22 (SSH).
+Examples:
+
+Capture all traffic on a specific network interface:
+
+tcpdump -i eth0
+
+
+Capture and save packets to a file for later analysis:
+
+tcpdump -i eth0 -w capture.pcap
+
+
+Read and analyze packets from a capture file:
+
+tcpdump -r capture.pcap
+
+
+Capture HTTP traffic on port 80:
+
+tcpdump -i eth0 -A port 80
+
+
+Capture all DNS traffic to or from a specific host:
+
+tcpdump -i eth0 port 53 and host 192.168.1.1
+
+
+Please note that using tcpdump may require root (superuser) privileges to capture network packets. Additionally, it's a powerful tool, so use it responsibly and ensure you have the necessary permissions to capture network traffic.
